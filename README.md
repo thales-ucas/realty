@@ -7,6 +7,27 @@
 python
 
 
+## 库
+
+
+```bash
+conda install -c conda-forge statsmodels
+```
+
+
+```bash
+conda install -c conda-forge scikit-learn
+```
+
+
+## jupyter
+
+
+```
+conda install ipykernel
+```
+
+
 # 时间序列
 
 
@@ -64,3 +85,64 @@ Xt=j1Xt-1+ j2Xt-2 + … + jpXt-p + et - q1et-1 - q2et-2 - ¼ - qqet-q
 这个限制条件说明当期的随机干扰与过去的序列值无关。
 
 
+# 设置policy
+
+
+```bash
+set-ExecutionPolicy RemoteSigned
+```
+
+
+# 源修改
+
+
+## 清华源
+
+
+```bash
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+```
+
+## 设置通道地址
+
+
+```bash
+conda config --set show_channel_urls yes
+```
+
+
+## 中科大源
+
+
+```bash
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
+```
+
+## 删除源
+
+
+```bash
+conda config --remove-key $channels
+```
+
+
+## 直接修改文件
+
+
+```conf
+# /.condaarc
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+show_channel_urls: true
+```
