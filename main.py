@@ -1,2 +1,2 @@
-import sklearn
-print(sklearn.__version__)
+import statsmodels
+print(statsmodels.__version__)
